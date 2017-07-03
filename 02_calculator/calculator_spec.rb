@@ -100,22 +100,22 @@ end
 describe "#factorial" do
   it "computes the factorial of 0" do
     calc = Calculator.new
-    expect(factorial(0)).to eq(1)
+    expect(calc.factorial(0)).to eq(1)
   end
   it "computes the factorial of 1" do
     calc = Calculator.new
-    expect(factorial(1)).to eq(1)
+    expect(calc.factorial(1)).to eq(1)
   end
   it "computes the factorial of 2" do
     calc = Calculator.new
-    expect(factorial(2)).to eq(2)
+    expect(calc.factorial(2)).to eq(2)
   end
   it "computes the factorial of 5" do
     calc = Calculator.new
-    expect(factorial(5)).to eq(120)
+    expect(calc.factorial(5)).to eq(120)
   end
   it "computes the factorial of 10" do
     calc = Calculator.new
-    expect(factorial(10)).to eq(3628800)
+    expect(calc.factorial(10)).to eq(3628800)
   end
 end

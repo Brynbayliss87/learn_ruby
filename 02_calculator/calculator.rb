@@ -49,7 +49,20 @@ class Calculator
   end
 
   def factorial(n)
+    
+    multiplier = n-1
+    total = n
 
+    if n == 0
+      total = 1
+    elsif n == 1
+      total = 1
+    else
+      until  multiplier == 0
+        total = total * multiplier
+        multiplier -= 1
+      end
+    end
+    total
   end
-
 end
