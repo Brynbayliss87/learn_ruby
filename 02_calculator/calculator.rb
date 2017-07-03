@@ -38,4 +38,14 @@ class Calculator
     end
     total
   end
+
+  def power(base, exponent)
+    total = base
+    exponent = exponent-1
+    exponent.times do
+      total *= base
+    end
+    total
+  end
+
 end

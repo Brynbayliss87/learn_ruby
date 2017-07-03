@@ -90,7 +90,10 @@ describe "#multiply" do
 end
 
 describe "#power" do
-  it "raises one number to the power of another number"
+  it "raises one number to the power of another number"do
+  calc = Calculator.new
+  expect(calc.power(5, 3)).to eq(125)
+  end
 end
 
 # http://en.wikipedia.org/wiki/Factorial
