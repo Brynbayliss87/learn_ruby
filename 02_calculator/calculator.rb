@@ -19,8 +19,6 @@ def sum(arr)
    total = 0 
   elsif arr.length == 1
     total = arr[0] 
-  elsif arr.length == 2
-    total = arr[0] + arr[1]
   else
     arr.each do  |i|
       total+=i
@@ -29,16 +27,15 @@ def sum(arr)
   total
 end
 
-def multiply(arr)
 
-  total = 0
 
-  if arr.length == 2
-    total = arr[0] * arr[1]
-  else
-    arr.each do |i|
-      total *= i
+class Calculator
+
+  def multiply(*args)
+    total = args.shift
+    args.each do |i|
+      total *= i 
     end
+    total
   end
-  total
 end
