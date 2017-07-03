@@ -48,4 +48,8 @@ class Calculator
     total
   end
 
+  def factorial(n)
+
+  end
+
 end
