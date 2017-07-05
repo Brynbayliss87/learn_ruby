@@ -78,44 +78,51 @@ end
 # write tests and code for the following:
 
 describe "#multiply" do
+  
+  before do
+    @calc = Calculator.new
+  end
 
-  it "multiplies two numbers"do
-    calc = Calculator.new
-    expect(calc.multiply(2, 2)).to eq(4)
+  it "multiplies two numbers"do 
+    expect(@calc.multiply(2, 2)).to eq(4)
   end
   it "multiplies several numbers"do
-    calc = Calculator.new
-    expect(calc.multiply(3, 3, 3)).to eq(27)
+    
+    expect(@calc.multiply(3, 3, 3)).to eq(27)
   end
 end
 
 describe "#power" do
-  it "raises one number to the power of another number"do
-  calc = Calculator.new
-  expect(calc.power(5, 3)).to eq(125)
+
+   before do
+    @calc = Calculator.new
+  end
+
+  it "raises one number to the power of another number"do 
+  expect(@calc.power(5, 3)).to eq(125)
   end
 end
 
 # http://en.wikipedia.org/wiki/Factorial
 describe "#factorial" do
-  it "computes the factorial of 0" do
-    calc = Calculator.new
-    expect(calc.factorial(0)).to eq(1)
+
+   before do
+    @calc = Calculator.new
   end
-  it "computes the factorial of 1" do
-    calc = Calculator.new
-    expect(calc.factorial(1)).to eq(1)
+
+  it "computes the factorial of 0" do 
+    expect(@calc.factorial(0)).to eq(1)
   end
-  it "computes the factorial of 2" do
-    calc = Calculator.new
-    expect(calc.factorial(2)).to eq(2)
+  it "computes the factorial of 1" do 
+    expect(@calc.factorial(1)).to eq(1)
   end
-  it "computes the factorial of 5" do
-    calc = Calculator.new
-    expect(calc.factorial(5)).to eq(120)
+  it "computes the factorial of 2" do 
+    expect(@calc.factorial(2)).to eq(2)
   end
-  it "computes the factorial of 10" do
-    calc = Calculator.new
-    expect(calc.factorial(10)).to eq(3628800)
+  it "computes the factorial of 5" do 
+    expect(@calc.factorial(5)).to eq(120)
+  end
+  it "computes the factorial of 10" do 
+    expect(@calc.factorial(10)).to eq(3628800)
   end
 end
