@@ -22,3 +22,15 @@ def first_word(string)
   words = string.split()
   words[0]
 end
+
+def titleize(string)
+  words = string.split()
+  result =[]
+  words.each do |word|
+	  result << word.capitalize
+  end
+  result = result.join(" ").gsub("And", "and").gsub("The", "the").gsub("Over", "over")
+  result[0] = result[0].upcase
+  result
+end
+
