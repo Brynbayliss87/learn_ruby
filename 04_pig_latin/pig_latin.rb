@@ -1,3 +1,14 @@
+def firstTwoLetters(word)
+  char = word.slice!(0, 2)
+  word += "#{char}ay"
+end
+
+def firstThreeLetters(word)
+  char = word.slice!(0, 3)
+  word += "#{char}ay"
+end
+
+
 def translate(string)
   result=""
   string = string.split(" ")
@@ -8,9 +19,7 @@ def translate(string)
     else
       if word[1] =~ /\b[aeiou]\w*/i
         if word[0].downcase =="q"
-          char = word.slice!(0, 2)
-	   word += "#{char}ay"
-	   result += "#{word} "
+	   result += "#{firstTwoLetters(word)} "
 	else
           char = word.slice!(0)
           word += "#{char}ay"
@@ -18,17 +27,11 @@ def translate(string)
         end
       elsif word[2] =~/\b[aeiou]\w*/i
         if word[1] == "q"
-          char = word.slice!(0, 3)
-	  word += "#{char}ay"
-          result += "#{word} "
+          result += "#{firstThreeLetters(word)} "
 	else
-          char = word.slice!(0, 2)
-          word += "#{char}ay"
-          result += "#{word} "
+          result += "#{firstTwoLetters(word)} "
 	end
-      else char = word.slice!(0, 3)
-        word += "#{char}ay"
-        result += "#{word} "
+      else result += "#{firstThreeLetters(word)} "
       end
     end
   end
