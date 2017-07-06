@@ -7,14 +7,26 @@ def translate(string)
       result += "#{word} "
     else
       if word[1] =~ /\b[aeiou]\w*/i
-        char = word.slice!(0)
-        word += "#{char}ay"
-        result += "#{word} "
+        if word[0].downcase =="q"
+          char = word.slice!(0, 2)
+	   word += "#{char}ay"
+	   result += "#{word} "
+	else
+          char = word.slice!(0)
+          word += "#{char}ay"
+          result += "#{word} "
+        end
       elsif word[2] =~/\b[aeiou]\w*/i
-        char = string.slice!(0, 2)
-        word += "#{char}ay"
-        result += "#{word} "
-      else char = string.slice!(0, 3)
+        if word[1] == "q"
+          char = word.slice!(0, 3)
+	  word += "#{char}ay"
+          result += "#{word} "
+	else
+          char = word.slice!(0, 2)
+          word += "#{char}ay"
+          result += "#{word} "
+	end
+      else char = word.slice!(0, 3)
         word += "#{char}ay"
         result += "#{word} "
       end
